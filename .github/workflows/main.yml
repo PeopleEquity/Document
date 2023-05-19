@@ -1,16 +1,14 @@
 name: Continous Integration
-
 on:
   push:
     branches:
       - main
-
 jobs:
   build-deploy:
     runs-on: ubuntu-18.04
     steps:
     - name: Checkout # checkout the repository
-      uses: actions/checkout@main
+      uses: actions/checkout@v2
       with:
         ref: main
 
@@ -20,11 +18,48 @@ jobs:
     - name: Build
       run: yarn build
 
-    - name: Deploy
-      uses: wlixcc/SFTP-Deploy-Action@v1.0
-      with:  
-        username: 'root'   #ssh user name
-        server: '35.240.131.231' #引用之前创建好的secret
-        ssh_private_key: ${{secrets.document}} # linux的ssh_key设置在该项目中时所取的名字
-        local_path: './build/*'  # 项目build的文件夹路径
-        remote_path: '/usr/local/pe_projects/Equity-Document/'
+    # - name: Deploy
+    #   uses: wlixcc/SFTP-Deploy-Action@v1.0
+    #   with:  
+    #     username: 'root'   #ssh user name
+    #     server: '35.240.131.231' #引用之前创建好的secret
+    #     ssh_private_key: ${{secrets.document}} # linux的ssh_key设置在该项目中时所取的名字
+    #     local_path: './build/*'  # 项目build的文件夹路径
+    #     remote_path: '/usr/local/pe_projects/Equity-Document/'
+
+#name: Build & Deploy on GCP
+#on:
+#  #监听push操作
+#  push:
+#    branches:
+#      # mian分支，你也可以改成其他分支
+#      - main
+#jobs:
+#  # 任务ID
+#  build:
+#    # 运行环境
+#    runs-on: ubuntu-18.04
+#    # 步骤
+#    steps:
+#    # 使用别人的action
+#    - uses: actions/checkout@v2
+#    # 步骤名称
+#    # - name: npm install
+#      # 步骤执行指令
+#      #run: npm install
+#    - name: npm run build
+#      run: npm run build
+#    # 命名这个任务为发布Deploy
+#    - name: Deploy
+#      # 因为构建之后，需要把代码上传到服务器上，所以需要连接到ssh，并且做一个拷贝操作
+#      uses: cross-the-world/scp-pipeline@master
+#      env:
+#        WELCOME: "ssh scp ssh pipelines"
+#        LASTSSH: "Doing something after copying"
+#      with:
+#        host: ${{ secrets.USER_HOST }}
+#        user: ${{ secrets.USER_NAME }}
+#        pass: ${{ secrets.USER_PASS }}
+#        connect_timeout: 10s
+#        local: './dist/*'
+#        remote: /home/www/dist

@@ -1,11 +1,6 @@
 name: Continous Integration
 
 on:
-  pull_request:
-    types: [closed]
-    branches:
-      - main
-
   push:
     branches:
       - main

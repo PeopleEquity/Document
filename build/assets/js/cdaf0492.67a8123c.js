@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[98],{1752:function(e){e.exports=JSON.parse('{"allTagsPath":"/blog/tags","slug":"fiber","name":"fiber","count":1,"permalink":"/blog/tags/fiber"}')}}]);

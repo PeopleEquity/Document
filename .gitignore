@@ -1,8 +1,8 @@
 # Dependencies
 /node_modules
 
-# Production
-/build
+# Production(目前直接上传build文件夹部署吧；要么将就是基于Action构建Docker部署)
+# /build
 
 # Generated files
 .docusaurus

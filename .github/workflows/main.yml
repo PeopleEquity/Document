@@ -5,7 +5,7 @@ on:
       - main
 jobs:
   build-deploy:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
     - name: Checkout # checkout the repository
       uses: actions/checkout@v2

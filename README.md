@@ -1,3 +1,3 @@
 # Document
-A simple recording and sharing platform for ourselves.
+A simple recording and sharing platform for ourselves...
 

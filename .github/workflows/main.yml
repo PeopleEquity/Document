@@ -27,9 +27,9 @@ jobs:
 
     - name: Deploy
       uses: wlixcc/SFTP-Deploy-Action@v1.0
-      with:  
+      with: 
         username: 'root'   #ssh user name
         server: '35.240.131.231' #引用之前创建好的secret
-        ssh_private_key: ${{secrets.document}} # linux的ssh_key设置在该项目中时所取的名字
+        ssh_private_key: ${{secrets.Document}} # linux的ssh_key设置在该项目中时所取的名字
         local_path: './build/*'  # 项目build的文件夹路径
         remote_path: '/usr/local/pe_projects/Document/' ###

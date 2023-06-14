@@ -4,7 +4,7 @@ sidebar_position: 0
 
 # PeopleEquity
 
-> 减少内耗，减少重复讨论。
+> 减少内耗，减少重复讨论。Test
 
 :::danger danger
 目前，仅面向内部，暂不公开

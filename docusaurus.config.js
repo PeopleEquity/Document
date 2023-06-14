@@ -32,6 +32,12 @@ module.exports = {
         },
         {to: '/blog', label: 'Blog', position: 'left'},
         {
+          type: 'doc',
+          docId: 'Swap/feedbacks',
+          position: 'left',
+          label: 'Contributors Board',
+        },        
+        {
           href: 'https://github.com/peopleequity/Document',
           label: 'GitHub',
           position: 'right', // 此处可以加入个人的其它技术平台（待）

@@ -20,7 +20,7 @@ jobs:
       - name: Setup SSH
         uses: webfactory/ssh-agent@v0.5.0
         with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY_NEW }} # 服务器的SSH私钥
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }} # 服务器的SSH私钥
 
       - name: Copy files via SCP
         uses: appleboy/scp-action@master
@@ -31,4 +31,4 @@ jobs:
           source: ./build/*  # 更改为您的静态网站目录
           target: /root/pe-projects/Document  # 更改为您的服务器上的目标目录
         run: |
-          pm2 restart app 
+          pm2 serve /root/pe-projects/Document/build

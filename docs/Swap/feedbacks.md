@@ -2,7 +2,7 @@
 sidebar_position: 0
 ---
 
-# 📜 Feedback Board 📜
+# 📜 Bug Bounty 📜
 
 :::tip tip
 💋 Thanks for your time and sweat, and we will reward the 💵 corresponding incentives when appropriate.

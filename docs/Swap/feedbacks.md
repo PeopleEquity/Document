@@ -5,9 +5,9 @@ sidebar_position: 0
 # 📜 Feedback Board 📜
 
 :::tip tip
-💋 Thank you for your time and sweat, and we will reward 💵 the corresponding incentives when appropriate.
+💋 Thanks for your time and sweat, and we will reward the 💵 corresponding incentives when appropriate.
 
-👀 Welcome your continued feedback and we will update 📝 the form dynamically.
+👀 Your continued feedback is much appreciated and will be updated 📝 dynamically on this board.
 :::
 
 ## Feedback List

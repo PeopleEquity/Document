@@ -1,0 +1,32 @@
+name: Auto Deploy to Server
+
+on:
+  push:
+    branches:
+      - main  # 更改为您的默认分支
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Build
+        run: |
+          npm install
+          npm run build        
+
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.5.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }} # 服务器的SSH私钥
+
+      - name: Copy files via SCP
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.SERVER_HOST }} # 服务器IP/域名
+          username: ${{ secrets.SERVER_USERNAME }} # 服务器用户名
+          password: ${{ secrets.SERVER_PASSWORD }} # 服务器的密码
+          source: ../../build/  # 更改为您的静态网站目录
+          target: /root/pe-projects/Document  # 更改为您的服务器上的目标目录

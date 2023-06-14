@@ -16,6 +16,8 @@ This is a test post.
 
 A whole bunch of other information.
 
+> Demo: 参考下面这样，可以直接展示youtube的视频
+
 ```js youtubeID=MnrJzXM7a6o
 function main() {
   console.log(1);

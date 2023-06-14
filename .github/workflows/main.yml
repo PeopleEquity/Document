@@ -1,36 +1,36 @@
-name: website:Install-Build-Deploy
-on:
-  push:
-    branches:
-      - main
-jobs:
-  build-deploy:
-    runs-on: ubuntu-latest
+# name: website:Install-Build-Deploy
+# on:
+#   push:
+#     branches:
+#       - main
+# jobs:
+#   build-deploy:
+#     runs-on: ubuntu-latest
 
-    steps:
+#     steps:
 
-    - name: Checkout # checkout the repository
-      uses: actions/checkout@v3
-      with:
-        ref: main
+#     - name: Checkout # checkout the repository
+#       uses: actions/checkout@v3
+#       with:
+#         ref: main
 
-    - name: Use Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '16.16.0'
+#     - name: Use Node.js
+#       uses: actions/setup-node@v3
+#       with:
+#         node-version: '16.16.0'
 
-    - name: Install Dependencies
-      run: yarn
+#     - name: Install Dependencies
+#       run: yarn
 
-    - name: Build
-      run: yarn build
+#     - name: Build
+#       run: yarn build
 
-    - name: Deploy
-      uses: wlixcc/SFTP-Deploy-Action@v1.0
-      with: 
-        username: 'root'   #ssh user name
-        # server: '35.240.131.231' #引用之前创建好的secret
-        server: '35.224.5.222'
-        ssh_private_key: ${{secrets.Document}} # linux的ssh_key设置在该项目中时所取的名字
-        local_path: './build/*'  # 项目build的文件夹路径
-        remote_path: '/usr/local/pe_projects/Document/' ###
+#     - name: Deploy
+#       uses: wlixcc/SFTP-Deploy-Action@v1.0
+#       with: 
+#         username: 'root'   #ssh user name
+#         # server: '35.240.131.231' #引用之前创建好的secret
+#         server: '35.224.5.222'
+#         ssh_private_key: ${{secrets.Document}} # linux的ssh_key设置在该项目中时所取的名字
+#         local_path: './build/*'  # 项目build的文件夹路径
+#         remote_path: '/usr/local/pe_projects/Document/' ###

@@ -28,5 +28,5 @@ jobs:
           host: ${{ secrets.SERVER_HOST }} # 服务器IP/域名
           username: ${{ secrets.SERVER_USERNAME }} # 服务器用户名
           password: ${{ secrets.SERVER_PASSWORD }} # 服务器的密码
-          source: ../../build/  # 更改为您的静态网站目录
+          source: ./build/*  # 更改为您的静态网站目录
           target: /root/pe-projects/Document  # 更改为您的服务器上的目标目录
